@@ -1,0 +1,59 @@
+/* Base styles for Wicked Modal - minimal by default (no animation) */
+
+:root {
+  --wicked-modal-overlay-bg: rgba(0, 0, 0, 0.5);
+  --wicked-modal-bg: #fff;
+  --wicked-modal-color: #111;
+  --wicked-modal-radius: 12px;
+  --wicked-modal-shadow: 0 10px 40px rgba(0,0,0,0.18);
+  --wicked-modal-z: 100000; /* Above most builders */
+}
+
+.wm-hidden { display: none !important; }
+
+.wm-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--wicked-modal-overlay-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--wicked-modal-z);
+}
+
+.wm-overlay.wm-align-top { align-items: flex-start; }
+.wm-overlay.wm-align-bottom { align-items: flex-end; }
+.wm-overlay.wm-align-center { align-items: center; }
+
+.wm-modal {
+  background: var(--wicked-modal-bg);
+  color: var(--wicked-modal-color);
+  border-radius: var(--wicked-modal-radius);
+  box-shadow: var(--wicked-modal-shadow);
+  width: min(90vw, var(--wm-width, 640px));
+  max-height: 90vh;
+  overflow: auto;
+  outline: none;
+  position: relative;
+}
+
+.wm-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Optional basic transitions (off by default; toggled via data-wm-anim) */
+.wm-anim-fade .wm-overlay { opacity: 0; transition: opacity var(--wm-anim-dur, 200ms) ease; }
+.wm-anim-fade.wm-open .wm-overlay { opacity: 1; }
+
+.wm-anim-scale .wm-modal { transform: scale(0.96); opacity: 0; transition: transform var(--wm-anim-dur, 200ms) ease, opacity var(--wm-anim-dur, 200ms) ease; }
+.wm-anim-scale.wm-open .wm-modal { transform: scale(1); opacity: 1; }
+
+.wm-anim-slide-up .wm-modal { transform: translateY(12px); opacity: 0; transition: transform var(--wm-anim-dur, 220ms) ease, opacity var(--wm-anim-dur, 220ms) ease; }
+.wm-anim-slide-up.wm-open .wm-modal { transform: translateY(0); opacity: 1; }

@@ -1,0 +1,104 @@
+{
+  "content": [
+    {
+      "label": "General",
+      "controls": [
+        { "type": "text", "name": "modal_id", "label": "Modal ID", "placeholder": "wicked-modal-1" },
+        { "type": "switch", "name": "include_close", "label": "Include Close Button", "default": true },
+        { "type": "text", "name": "open_label", "label": "Open Button Label", "placeholder": "Open Modal" },
+  { "type": "switch", "name": "render_open_button", "label": "Render Built-in Open Button", "default": true }
+      ]
+    },
+    {
+      "label": "Triggers",
+      "controls": [
+  { "type": "switch", "name": "trigger_by_id", "label": "Allow external triggers by data attributes", "default": true },
+  { "type": "text", "name": "trigger_selector", "label": "External Trigger Selector (CSS)", "placeholder": ".open-modal" },
+        { "type": "number", "name": "delay", "label": "Open After Delay (ms)", "min": 0, "step": 100, "default": 0 },
+        { "type": "number", "name": "time_on_page", "label": "Open After Time On Page (ms)", "min": 0, "step": 100, "default": 0 },
+        { "type": "number", "name": "scroll_depth", "label": "Open At Scroll Depth (%)", "min": 0, "max": 100, "step": 1, "default": 0 },
+  { "type": "switch", "name": "exit_intent", "label": "Open On Exit Intent", "default": false },
+  { "type": "switch", "name": "open_on_hash", "label": "Open When URL Hash Matches (#modal-id or #open-modal-id)", "default": false },
+  { "type": "text", "name": "open_on_param", "label": "Open When URL Param Exists (key)", "placeholder": "open_modal" },
+  { "type": "number", "name": "inactivity", "label": "Open After Inactivity (ms)", "min": 0, "step": 100, "default": 0 },
+  { "type": "switch", "name": "once_per_session", "label": "Open Only Once Per Session", "default": false }
+      ]
+    },
+    {
+      "label": "Layout",
+      "controls": [
+        { "type": "select", "name": "size_preset", "label": "Size Preset", "default": "medium", "choices": [
+          { "name": "Small (480px)", "value": "small" },
+          { "name": "Medium (640px)", "value": "medium" },
+          { "name": "Large (800px)", "value": "large" },
+          { "name": "XL (960px)", "value": "xl" },
+          { "name": "Full (100vw)", "value": "full" },
+          { "name": "Custom", "value": "custom" }
+        ]},
+        { "type": "text", "name": "width", "label": "Width (e.g., 640px or 80vw)", "placeholder": "640px" },
+        { "type": "select", "name": "vertical_align", "label": "Vertical Alignment", "default": "center", "choices": [
+          { "name": "Top", "value": "top" },
+          { "name": "Center", "value": "center" },
+          { "name": "Bottom", "value": "bottom" }
+        ]},
+  { "type": "switch", "name": "lock_scroll", "label": "Lock Body Scroll While Open", "default": true }
+      ]
+    },
+    {
+      "label": "Animation",
+      "controls": [
+        { "type": "select", "name": "animation", "label": "Animation", "default": "none", "choices": [
+          { "name": "None", "value": "none" },
+          { "name": "Fade", "value": "fade" },
+          { "name": "Scale", "value": "scale" },
+          { "name": "Slide Up", "value": "slide-up" }
+        ]},
+        { "type": "number", "name": "anim_duration", "label": "Animation Duration (ms)", "default": 200, "min": 0, "step": 50 }
+      ]
+    },
+    {
+      "label": "Accessibility",
+      "controls": [
+  { "type": "text", "name": "aria_label", "label": "ARIA Label", "placeholder": "Dialog" },
+  { "type": "switch", "name": "close_on_overlay", "label": "Close On Overlay Click", "default": true },
+  { "type": "switch", "name": "close_on_esc", "label": "Close On Escape Key", "default": true }
+      ]
+    },
+    {
+      "label": "Frequency",
+      "controls": [
+        { "type": "select", "name": "frequency_mode", "label": "Show Frequency", "default": "always", "choices": [
+          { "name": "Always", "value": "always" },
+          { "name": "Once per session", "value": "session" },
+          { "name": "Once per N days", "value": "days" }
+        ]},
+        { "type": "number", "name": "frequency_days", "label": "N Days", "default": 7, "min": 1, "step": 1 }
+      ]
+    }
+  ],
+  "design": [
+    {
+      "label": "Overlay",
+      "controls": [
+        { "type": "background", "name": "overlay_bg", "label": "Overlay Background" }
+      ]
+    },
+    {
+      "label": "Modal",
+      "controls": [
+        { "type": "size", "name": "modal_padding", "label": "Padding" },
+        { "type": "borderRadius", "name": "modal_radius", "label": "Border Radius" },
+        { "type": "boxShadow", "name": "modal_shadow", "label": "Shadow" },
+        { "type": "background", "name": "modal_bg", "label": "Background" },
+        { "type": "typography", "name": "modal_typography", "label": "Typography" }
+      ]
+    },
+    {
+      "label": "Close Button",
+      "controls": [
+        { "type": "typography", "name": "close_typography", "label": "Typography" },
+        { "type": "color", "name": "close_color", "label": "Color" }
+      ]
+    }
+  ]
+}

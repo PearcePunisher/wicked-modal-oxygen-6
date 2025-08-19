@@ -1,0 +1,12 @@
+{
+  "name": "Wicked Modal",
+  "handle": "wicked_modal",
+  "description": "Accessible modal with multiple trigger types and inner builder content.",
+  "type": "section",
+  "supportsInnerContent": true,
+  "category": "Wicked Modal",
+  "icon": "modal",
+  "display": {
+    "inline": false
+  }
+}
